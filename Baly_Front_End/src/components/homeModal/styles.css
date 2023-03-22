@@ -1,0 +1,116 @@
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.4);
+}
+.modalContent {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fefefe;
+  padding: 0;
+  width: 65%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: scaleUp;
+  -webkit-animation-duration: 0.2s;
+  animation-name: scaleUp;
+  animation-duration: 0.2;
+  border-radius: 10px;
+  max-height: 100vh;
+  overflow: auto;
+}
+@-webkit-keyframes scaleUp {
+  0% {
+    transform: scale(0.8) translate(-50%, -50%);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.8) translate(-50%, -50%);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+@keyframes animationtop {
+  from {
+    top: 10px;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+.close {
+  font-size: 28px;
+  font-weight: bold;
+  color: red;
+  cursor: pointer;
+}
+
+.modalHeader {
+  padding: 1rem 1rem 0 1rem;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+.modalHeader h2 {
+  text-align: center;
+  flex: 1;
+  font-size: 1.3rem;
+  color: black;
+}
+.modalBody {
+  padding: 1rem 1rem 0 1rem;
+}
+.modalFooter {
+  padding: 5px 1rem;
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.modalFooter button {
+  width: 40%;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  transition: filter 0.2s;
+}
+.modalFooter button:hover:enabled {
+  filter: brightness(120%) saturate(120%);
+  cursor: pointer;
+}
+.modalFooter button:disabled {
+  background: #8e8e8eb0;
+  cursor: not-allowed;
+}
+.btn-cancel {
+  background-color: white;
+  color: red;
+  border-color: red;
+}
+.btn-sucess {
+  border: none;
+  background-color: #946565;
+  color: white;
+}
